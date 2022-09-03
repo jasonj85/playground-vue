@@ -32,7 +32,7 @@
           />
         </div>
       </div>
-      <SubNav />
+      <SubNav v-if="isLoggedIn" data-test="sub-nav" />
     </div>
   </header>
 </template>
