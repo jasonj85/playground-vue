@@ -1,6 +1,6 @@
 import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
-import HeadlineSection from "@/components/HeadlineSection.vue";
+import HeadlineSection from "@/components/JobSearch/HeadlineSection.vue";
 
 beforeEach(() => {
   jest.useFakeTimers("legacy");
