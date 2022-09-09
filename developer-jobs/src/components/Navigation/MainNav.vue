@@ -4,9 +4,11 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a :href="url" class="flex items-center h-full text-xl">{{
-          websiteName
-        }}</a>
+        <router-link
+          :to="{ name: 'Home' }"
+          class="flex items-center h-full text-xl"
+          >Developer Jobs</router-link
+        >
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
             <li
@@ -47,7 +49,6 @@ export default {
   components: { ActionButton, ProfileImage, SubNav },
   data() {
     return {
-      websiteName: "Developer Jobs",
       url: "https://www.developerjobs.com",
       menuItems: [
         "Teams",
