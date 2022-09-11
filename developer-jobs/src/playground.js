@@ -1,10 +1,15 @@
-const interval = setInterval(() => {
-  console.log("Hello World!");
-}, 1000);
+const axios = require("axios");
 
-setTimeout(() => {
-  clearInterval(interval);
-  console.log("Interval cleared!");
-}, 5000);
+const url = "http://localhost:3000/jobs";
 
-//https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png
+axios
+  .get(url)
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    console.log("finally");
+  });

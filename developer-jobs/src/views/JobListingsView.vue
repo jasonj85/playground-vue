@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import JobFiltersSidebar from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebar.vue";
-import JobListings from "@/components/JobResults/JobListings.vue";
+import JobFiltersSidebar from "@/components/JobListings/JobFiltersSidebar/JobFiltersSidebar.vue";
+import JobListings from "@/components/JobListings/JobListings.vue";
 
 export default {
-  name: "JobResultsView",
+  name: "JobListingsView",
   components: { JobFiltersSidebar, JobListings },
 };
 </script>

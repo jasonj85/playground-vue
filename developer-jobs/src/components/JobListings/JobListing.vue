@@ -1,17 +1,24 @@
 <template>
   <li class="mb-7">
     <router-link
-      to="/jobs/results/1"
+      to="/jobs/results/{{job.id}}"
       class="block mx-auto bg-white border border-solid border-brand-gray-2 rounded hover:shadow-gray"
     >
       <div class="pt-5 pb-2 mx-8 border-b border-solid border-brand-gray-2">
-        <h2 class="mb-2 text-2xl">Software Developer, C#</h2>
+        <h2 class="mb-2 text-2xl">{{ job.title }}</h2>
         <div class="flex flex-row align-middle">
           <div class="mr-5">
-            <span>Dev Careers</span>
+            <span>{{ job.jobType }}</span>
+          </div>
+          <div class="mr-5">
+            <span> @ {{ job.organization }}</span>
           </div>
           <div>
-            <span>London, United Kingdom</span>
+            in
+            <span v-for="(location, index) in job.locations" :key="location">
+              <span v-if="index !== 0">, </span>
+              {{ location }}
+            </span>
           </div>
         </div>
       </div>
@@ -27,7 +34,7 @@
           </ul>
         </div>
         <div class="mt-2 text-center">
-          <router-link to="/jobs/results/1" class="text-brand-blue-1"
+          <router-link to="/jobs/results/{{job.id}}" class="text-brand-blue-1"
             >Expand</router-link
           >
         </div>
@@ -39,5 +46,11 @@
 <script>
 export default {
   name: "JobListing",
+  props: {
+    job: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 </script>

@@ -18,7 +18,7 @@ describe("SubNav", () => {
 
   describe("when user is on the job page", () => {
     it("displays the job count", () => {
-      const routeName = "JobResults";
+      const routeName = "JobListings";
       const wrapper = mount(SubNav, createConfig(routeName));
 
       const jobCount = wrapper.find("[data-test='job-count']");
