@@ -13,7 +13,7 @@ describe("JobListing", () => {
     props: { job: { ...jobProps } },
     global: {
       stubs: {
-        "router-link": RouterLinkStub,
+        RouterLink: RouterLinkStub,
       },
     },
   });

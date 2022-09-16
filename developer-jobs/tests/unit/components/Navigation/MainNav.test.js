@@ -6,7 +6,7 @@ describe("MainNav", () => {
   const createWrapperConfig = () => ({
     global: {
       stubs: {
-        "router-link": RouterLinkStub,
+        RouterLink: RouterLinkStub,
       },
     },
   });
