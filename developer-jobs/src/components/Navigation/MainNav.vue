@@ -26,7 +26,7 @@
           </ul>
         </nav>
         <div class="flex items-center h-full ml-auto">
-          <ProfileImage v-if="isLoggedIn" data-test="profile-image" />
+          <ProfileImage v-if="Store.state" data-test="profile-image" />
           <ActionButton
             v-else
             text="Login"
@@ -45,6 +45,7 @@
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import SubNav from "@/components/Navigation/SubNav.vue";
+import Store from "@/store";
 
 export default {
   name: "MainNav",
@@ -73,11 +74,11 @@ export default {
   },
   methods: {
     loginUser() {
-      this.isLoggedIn = true;
+      Store.LOGIN_USER();
     },
 
     logoutUser() {
-      this.isLoggedIn = false;
+      Store.LOGOUT_USER();
     },
   },
 };
